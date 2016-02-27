@@ -1,0 +1,18 @@
+color: orange displays confidence
+font: LATO typeface, male and female friendly with a serious manner and summer feel
+
+
+vendors - css: css not created by us
+js:
+fonts: icon fonts
+
+RESPONSIVE WEB DESIGN:
+1. Fluid grids: all layout elements are sized in relative units like percentages, instead of absolute units like pixels
+
+2. Flex images: are also sized in relative units
+
+3. Media queries: different css rules for different browser widths/screen size
+
+grid.css ============
+responsivegridsystem.com
+
