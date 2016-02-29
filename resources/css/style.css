@@ -1,3 +1,13 @@
+/*COOLORS*/
+/*
+ORANGE COLORS  #e67e22 
+
+
+
+*/
+
+
+
 /*===========================================
 General Styles
 =============================================*/
@@ -15,40 +25,64 @@ html {
 	font-weight: 300; /*default weight*/
 	text-rendering: optimizeLegibility;
 }
-
+.box {
+	/*added box class because columns are too close to each other*/
+	padding: 1%;
+}
+/*===========================================
+Reusable Components
+=============================================*/
 
 .row {
 	max-width: 1140px; /*this is the only value that is absolute and in px*/
 	margin: 0 auto; /*all our rows will be centered*/
-	
 }
 
-/*===========================================
-Header Elements
-=============================================*/
-
-header {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0 ,0 ,0, 0.7)), url("img/hero.jpg"); /*path is relative to this css file inside the resources folder*/
-	/*linear gradient is used to make the image transparent PLEASE USE THIS FOR THE PORTFOLIO*/
-	height: 100vh; /*100% of view port*/
-	background-size: cover;
-	background-position: center;
+section {
+	/* adding whitespace padding, instead of margin*/
+	padding: 80px 0; /*add padding to columns*/
 }
-.hero-text-box {
-	width: 1140px;
-	position: absolute;/*vertical and horizontal centering*/
-	top: 50%; /*vertical and horizontal centering*/
-	left: 50%; /*vertical and horizontal centering*/
-	transform: translate(-50%, -50%); /*translate allows half of its width up and left*/
+/*----------------HEADINGS------------------*/
+
+h1, h2 {
+	font-weight: 300; /*for big font sizes use smaller font weight*/
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 h1 {
 	margin-top: 0; /*normalize.css adds some margin*/
 	margin-bottom: 20px;
 	color: #fff;
 	font-size: 240%; /*relative to the html global fontsize which is at 20px*/
-	font-weight: 300; /*for big font sizes use smaller font weight*/
-	text-transform: uppercase;
+	word-spacing: 4px;
 }
+h2 {
+	font-size: 180%;
+	text-align: center;
+	word-spacing: 2px;
+	margin-bottom: 30px; 
+}
+
+h2:after {
+	/*pseudo class adds yellow line between h2 and the immediate paragraph*/
+	display: block; 
+	height: 2px;
+	background-color: #e67e22;
+	content: " "; /* add space but no other characters*/
+	width: 100px;
+	margin: 0 auto;
+	margin-top: 30px; /*margin between h2 after and the actual h2, then 30px up and down*/
+}
+
+/*----------------PARAGRAPHS------------------*/
+.long-copy{
+	line-height: 145%;
+	width: 70%;  /*paragraph will no longer be centered after adjusting the width*/
+	margin-left: 15%; /*15% because the total width is 100% the remaining percent should be distributed between left and right*/
+}
+
+/*----------------BUTTONS------------------*/
+
 .btn:link,
 .btn:visited {
 	/*inline-block is similar to an inline element that can have padding and margin, inline elements cant.
@@ -95,4 +129,55 @@ textcolor needed to be changed on ghost and added a smooth transition between te
 .btn-ghost:active {
 	border: 1px solid #cf6d17;
 	color: #fff;
+}
 
+/*===========================================
+Header Elements
+=============================================*/
+
+header{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0 ,0 ,0, 0.7)), url("img/hero.jpg"); /*path is relative to this css file inside the resources folder*/
+	/*linear gradient is used to make the image transparent PLEASE USE THIS FOR THE PORTFOLIO*/
+	height: 100vh; /*100% of view port*/
+	background-size: cover;
+	background-position: center;
+}
+.hero-text-box {
+	width: 1140px;
+	position: absolute;/*vertical and horizontal centering*/
+	top: 50%; /*vertical and horizontal centering*/
+	left: 50%; /*vertical and horizontal centering*/
+	transform: translate(-50%, -50%); /*translate allows half of its width up and left*/
+}
+
+.logo{
+	height: 100px;
+	width: auto; /*determined automatically*/
+	float: left; 
+	margin-top: 20px;
+}
+.main-nav{
+	float: right;
+	list-style: none;
+}
+
+.main-nav li{
+	display: inline-block; /*li is originally block elements*/
+	margin-left: 40px;
+	margin-top: 55px;
+}
+.main-nav li a:link,
+.main-nav li a:visited{ 
+	/*link at the visited/current stays stays the same*/
+	padding: 8px 0; /*adding padding between the text and border bottom*/
+	color: #fff;
+	text-decoration: none;	/*no underline*/
+	text-transform: uppercase;
+	font-size: 90%; /*default font size is 20px on the html selector, 18/20 = 90%*/
+	border-bottom: 2px solid transparent; /*border set to transparent until you hover*/
+	transition: border-bottom 0.2s;
+}
+.main-nav li a:active,
+.main-nav li a:hover {
+	border-bottom: 1px solid #e67e22; /*orange color on highlight of nav buttons*/
+}
