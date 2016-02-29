@@ -44,10 +44,10 @@ section {
 }
 /*----------------HEADINGS------------------*/
 
-h1, h2 {
+h1, h2, h3 {
 	font-weight: 300; /*for big font sizes use smaller font weight*/
 	text-transform: uppercase;
-	letter-spacing: 1px;
+	
 }
 h1 {
 	margin-top: 0; /*normalize.css adds some margin*/
@@ -55,13 +55,22 @@ h1 {
 	color: #fff;
 	font-size: 240%; /*relative to the html global fontsize which is at 20px*/
 	word-spacing: 4px;
+	letter-spacing: 1px;
 }
 h2 {
 	font-size: 180%;
 	text-align: center;
 	word-spacing: 2px;
-	margin-bottom: 30px; 
+	margin-bottom: 30px;
+	letter-spacing: 1px; 
 }
+
+h3 {
+	font-size: 110%;
+	margin-bottom: 15px;
+}
+
+/*---------yellow line divider -----------*/
 
 h2:after {
 	/*pseudo class adds yellow line between h2 and the immediate paragraph*/
@@ -79,10 +88,28 @@ h2:after {
 	line-height: 145%;
 	width: 70%;  /*paragraph will no longer be centered after adjusting the width*/
 	margin-left: 15%; /*15% because the total width is 100% the remaining percent should be distributed between left and right*/
+	margin-right: 15%;
+	text-align: center;
+	/*margin-bottom: 30px;   already have a section for this*/ 
+}
+
+.box p {
+	font-size: 90%;
+	line-height: 145%;
+}
+
+/*----------------ICONS------------------*/
+.icon-big {
+	/*you can style the ionicons like fonts*/
+	font-size: 350%;
+	display: block;
+	color: #e67e22;
+	margin-bottom: 10px;
 }
 
 /*----------------BUTTONS------------------*/
 
+/**/
 .btn:link,
 .btn:visited {
 	/*inline-block is similar to an inline element that can have padding and margin, inline elements cant.
@@ -122,12 +149,12 @@ h2:after {
 .btn-full:active {
 /*we had to create another set of hover events for btn-ghost/full because they did not look good on hover
 textcolor needed to be changed on ghost and added a smooth transition between text colors*/
-	border: 1px solid #cf6d17;
+	border: 2px solid #cf6d17;
 	color: #fff;
 }
 .btn-ghost:hover,
 .btn-ghost:active {
-	border: 1px solid #cf6d17;
+	border: 2px solid #cf6d17;
 	color: #fff;
 }
 
@@ -138,7 +165,7 @@ Header Elements
 header{
 	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0 ,0 ,0, 0.7)), url("img/hero.jpg"); /*path is relative to this css file inside the resources folder*/
 	/*linear gradient is used to make the image transparent PLEASE USE THIS FOR THE PORTFOLIO*/
-	height: 100vh; /*100% of view port*/
+	height: 100vh; /*100% of view ports height*/
 	background-size: cover;
 	background-position: center;
 }
@@ -149,6 +176,7 @@ header{
 	left: 50%; /*vertical and horizontal centering*/
 	transform: translate(-50%, -50%); /*translate allows half of its width up and left*/
 }
+/*------------MAIN NAV -------------------------*/
 
 .logo{
 	height: 100px;
@@ -156,15 +184,17 @@ header{
 	float: left; 
 	margin-top: 20px;
 }
+
+
 .main-nav{
 	float: right;
 	list-style: none;
+	margin-top: 55px;
 }
-
 .main-nav li{
 	display: inline-block; /*li is originally block elements*/
 	margin-left: 40px;
-	margin-top: 55px;
+
 }
 .main-nav li a:link,
 .main-nav li a:visited{ 
@@ -179,5 +209,56 @@ header{
 }
 .main-nav li a:active,
 .main-nav li a:hover {
-	border-bottom: 1px solid #e67e22; /*orange color on highlight of nav buttons*/
+	border-bottom: 2px solid #e67e22; /*orange color on highlight of nav buttons*/
 }
+
+/*===========================================
+Features
+=============================================*/
+.section-features .long-copy {
+	margin-bottom: 30px;
+}
+
+/*===========================================
+MEALS
+=============================================*/
+
+.section-meals{
+	padding: 0; /*subtracts badding between columns and the meals section*/
+}
+
+.meals-showcase{
+	list-style: none;
+	width: 100%;
+}
+
+.meals-showcase li {
+	/*display images as block and float*/
+	display: block;
+	float: left;/* side by side image*/
+	width: 25%; /*4 x 25 is 100% of the width*/
+}
+
+.meal-photo{
+	width: 100%; /*has exact with of parent (meal showcase li or 25%)*/
+	margin: 0; /*normalize file has added some margin*/
+	overflow: hidden;/*chilrden inside this div that extend out, those excess will be hidden*/
+}
+.meal-photo img{
+	opacity: 0.7; /*makes images darker, adds a haze/fade*/
+	width: 100%;
+	height: auto;
+	transform: scale(1.15); /*makes the images bigger than the meal-photo container, it overflows out*/
+	transition: transform 0.5s, opacity 0.5s;
+	background: #000; /*since image is opaque with a black background, image gets darker*/
+}
+.meal-photo img:hover{
+	opacity:1; /*picture gets lighter on hover*/
+	transform: scale(1.03); /*white line on top images, will be reduced*/
+	/*zoom out effect */
+}
+
+
+/*===========================================
+HOW TO STEPS
+=============================================*/
