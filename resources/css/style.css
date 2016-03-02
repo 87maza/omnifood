@@ -29,6 +29,21 @@ html {
 	/*added box class because columns are too close to each other*/
 	padding: 1%;
 }
+
+.clearfix {
+	/*clearfix clear the float after the element, the parent has the clearfix class*/
+	zoom: 1;
+}
+.clearfix:after {
+
+	content: '.';
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+
 /*===========================================
 Reusable Components
 =============================================*/
@@ -55,7 +70,8 @@ h1 {
 	color: #fff;
 	font-size: 240%; /*relative to the html global fontsize which is at 20px*/
 	word-spacing: 4px;
-	letter-spacing: 1px;
+	letter-spacing: 1px
+
 }
 h2 {
 	font-size: 180%;
@@ -105,6 +121,39 @@ h2:after {
 	display: block;
 	color: #e67e22;
 	margin-bottom: 10px;
+}
+
+.icon-small {
+	display: inline-block;
+	width: 30px;
+	/*display and width to align those bullets*/
+	text-align: center;
+	color:#e67e22;
+	font-size: 120%;
+
+	/*SECRETS TO ALIGN TEXT AND ICONS*/
+	line-height: 120%;	
+	vertical-align: middle;
+	margin-top: -5px; /*pulls icon to the top*/
+	margin-right:10px; /*space between icon and text*/
+
+}
+
+/*----------------LINKS GENERIC------------------*/
+
+a:link,
+a:visited {
+	color:#e67e22;
+	text-decoration: none;
+	border-bottom: 1px solid #e67e22;
+}
+
+a:hover,
+a:active {
+	color: #555;
+	border-bottom: 1px solid transparent;
+	/*on hover border will disappear*/
+	transition: border-bottom 0.2s, color 0.2s;
 }
 
 /*----------------BUTTONS------------------*/
@@ -223,9 +272,7 @@ Features
 MEALS
 =============================================*/
 
-.section-meals{
-	padding: 0; /*subtracts badding between columns and the meals section*/
-}
+
 
 .meals-showcase{
 	list-style: none;
@@ -262,3 +309,72 @@ MEALS
 /*===========================================
 HOW TO STEPS
 =============================================*/
+.section-steps {
+	/*subtle white color change*/
+	background-color: #f4f4f4;
+}
+
+.steps-box:first-child {
+	/*zero-classes selects first child aka iphone image*/
+	text-align: right;
+	padding-right: 3%; /*responsive*/
+	margin-top: 30px;
+
+}
+.steps-box:last-child {
+	padding-left: 3%;
+	margin-top: 70px;
+
+}
+.app-screen {
+	width: 40%;
+}
+
+.works-step:last-of-type {
+/*pushing the app-buttons to the bottom of phone... affects only the last works step just like last-child*/
+	margin-bottom: 80px;
+}
+
+.works-step {
+	margin-bottom: 50px;
+}
+.works-step div {
+	color: #e67e22;
+	border: 2px solid #e67e22;
+	display: inline-block; /*so the number can be sidebyside with the text*/
+	border-radius: 50%;
+	height: 55px;
+	width: 55px;
+	text-align: center;
+	padding: 5px;
+	float: left;
+	font-size: 150%;
+	margin-right: 25px;
+}
+.btn-app img {
+	height: 50px;
+	width: auto;
+	margin-right: 10px;
+	/*fixes all app download buttons to same size*/
+}
+
+.btn-app:link,
+.btn-app:visited {
+	border: 0;
+	/*used to prevent the a:visited selectors from affecting the googleplay/appstore buttons border*/
+}
+
+
+/*===========================================
+CITIES
+=============================================*/
+.box img{
+	width: 100%; /*image must be as wide as the box,,  HEIGHT IS SET AUTOMATICALLY*/
+	height: auto;
+	margin-bottom: 15px;
+	/*space between image and text*/
+}
+.city-feature{
+	margin-bottom: 15px; /*space between bulletpoints*/
+
+}

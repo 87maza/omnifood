@@ -16,3 +16,28 @@ RESPONSIVE WEB DESIGN:
 grid.css ============
 responsivegridsystem.com
 
+UI Psuedo class:
+input[type-checkbox]:checked + label {
+	colosr:red;
+}
+//select elements based on current state
+//type=checkbox is the attribute selector
+// + label = find the checkbox that is checked and its immediate label
+RYAN SETON THE CSS NINJA
+
+estelle.github.com for the slides
+
+
+look for webforms (input:valid/invalid/required/optional/out of range)
+content-editable = its a text attribute that allows you to change and edit and will change the DOM but not save it
+
+Structural Selectors:
+Assuming global
+:first-of-type = body is automatically the first of its type within its parent
+:first-child = first child of every div
+body:last-child = last child of every div
+body:last-of-type = starting for the bottom of the div, the last type, looks bottom-up
+//for performance reasons, first of type is better than last of type
+:only-child matches the divs is 1 element
+body:only-of-type = matches only 1 type of every div
+:nth-child(3n) = n starts at 0 and increments up (3n-1) 2,5,8,11,14,17 
