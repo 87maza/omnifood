@@ -217,6 +217,7 @@ header{
 	height: 100vh; /*100% of view ports height*/
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
 }
 .hero-text-box {
 	width: 1140px;
@@ -376,5 +377,50 @@ CITIES
 }
 .city-feature{
 	margin-bottom: 15px; /*space between bulletpoints*/
+
+}
+
+
+
+
+/*===========================================
+TESTIMONIALS
+=============================================*/
+
+.section-testimonials {
+	background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img/back-customers.jpg');
+	background-size: cover;
+	color: #fff;
+	background-attachment: fixed;
+}
+
+blockquote {
+	padding: 2%;
+	font-style: italic; /*italic webfont comes from google MAKE SURE YOU ADD IT*/
+	line-height: 145%;
+	position: relative;
+	margin-top: 40px;
+}
+
+cite{
+	font-size: 90%;
+	margin-top: 25px;
+	display: block;
+}
+blockquote:before {
+	content: "\201C"; /*adds content TEXT before the blockquote tag*/
+	font-size: 500%;
+	display: block;
+	position: absolute; /*easiest way to change the location of the quote, parent must be relative*/
+	top: -5px;
+	left: -5px;
+	
+
+}
+cite img{
+	height: 45px;
+	border-radius: 50%;
+	margin-right: 10px; /*adding margin space between the name and the image*/
+	vertical-align: middle; /*vertical centering text and image*/
 
 }
