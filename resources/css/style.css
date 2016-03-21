@@ -17,6 +17,9 @@ General Styles
 	padding: 0;
 	box-sizing: border-box;
 }
+
+*:focus {outline: none;} /*removes chrome's blue highlighting when you click on a text box*/
+
 html {
 	background: #fff;
 	color: #555;
@@ -160,7 +163,8 @@ a:active {
 
 /**/
 .btn:link,
-.btn:visited {
+.btn:visited,
+input[type=submit] {
 	/*inline-block is similar to an inline element that can have padding and margin, inline elements cant.
 	normal a tags are inline elements
 	btn-link and btn-visited will look the same*/
@@ -173,7 +177,8 @@ a:active {
 	 /*for all btn classes, there should be a hover transition animation effect for the normal state*/
 }
 .btn-full:link,
-.btn-full:visited {
+.btn-full:visited,
+input[type=submit] {
 	background-color: #e67e22;
 	border: 1px solid #e67e22;
 	color: #fff;
@@ -186,7 +191,9 @@ a:active {
 	color: #e67e22;
 }
 .btn:hover,
-.btn:active {
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
 	/*links in css can have many states (link, visited, adctive, and hover)
 	link is the normal state
 	visited is the state after a visit
@@ -198,12 +205,12 @@ a:active {
 .btn-full:active {
 /*we had to create another set of hover events for btn-ghost/full because they did not look good on hover
 textcolor needed to be changed on ghost and added a smooth transition between text colors*/
-	border: 2px solid #cf6d17;
+	border: 1px solid #cf6d17;
 	color: #fff;
 }
 .btn-ghost:hover,
 .btn-ghost:active {
-	border: 2px solid #cf6d17;
+	border: 1px solid #cf6d17;
 	color: #fff;
 }
 
@@ -423,4 +430,86 @@ cite img{
 	margin-right: 10px; /*adding margin space between the name and the image*/
 	vertical-align: middle; /*vertical centering text and image*/
 
+}
+
+/*===========================================
+MEAL PLANS
+=============================================*/
+.section-plans {
+	background-color: #f4f4f4;
+}
+
+.plan-box {
+	background-color: #fff;
+	border-radius: 5px;
+	width: 90%; /*div plan-box exists because of the 90% format*/
+	/*need to center it within the parent div, the col div*/
+	margin-left: 5%;
+	box-shadow: 0 2px 2px #efefef;
+	/*x axis, y axis, blur effect, */
+}
+.plan-box div:first-child {
+	background-color: #fcfcfc;
+	/*subtle grey color on the price div*/
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.plan-box div:last-child {
+	text-align: center;
+	border: 0;
+	/*no border on the bottom, no gray botttom border and center the button*/
+}
+
+.plan-box div {
+	/*divs are unnamed but the same */
+	padding: 15px;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.plan-price {
+	font-size: 300%;
+	margin-bottom: 10px;
+	font-weight: 100;
+	color: #e67e22;
+}
+.plan-price span {
+	font-size: 30%; /*1/10 of the parent fontsize*/
+	font-weight: 300; /*reset because its inheriting */
+}
+.plan-price-meal {
+	font-size: 80%;
+}
+
+.plan-box ul {
+	list-style: none;
+}
+.plan-box ul li {
+	padding: 5px 0;
+}
+
+/*===========================================
+SUBMIT FORMS
+=============================================*/
+
+.contact-form {
+	width: 60%;
+	margin: 0 auto;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+	width: 100%;
+	padding: 7px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+}
+textarea {
+	height: 100px;
+}
+
+input[type=checkbox] {
+	margin: 10px 5px 10px 0;
 }
