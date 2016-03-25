@@ -1,0 +1,63 @@
+/*===========================================
+LAPTOPS/COMPUTERS FROM 1200PX
+=============================================*/
+
+
+@media only screen and (max-width: 1200px) {
+	/*IPHONE MOBILE MEDIA*/
+
+	.hero-text-box {
+		width: 100%;
+		padding: 0 2%; /*creates space between text and border of broswer, locks the nav-bar*/
+	}
+	.row {padding: 0 2%;}
+	/*if there's only one declaration in a block, you should save space*/
+	/*tag adds padding to all row divs, adds extra space between the browser edge and the row div*/
+}
+
+
+
+
+/*===========================================
+LARGER TABLETS/IPADS IN PORTRAIT MODE FROM 767PX-1023PX
+=============================================*/
+
+
+@media only screen and (max-width: 1023px) {
+	body {font-size: 18px;}
+		/*all fontsize have a base which makes it easy to call all font-sizes to 18 since all the children are in precentages*/
+	section{padding: 60px 0;}/*less padding between sections*/
+
+	.long-copy {
+		width: 80%;
+		margin-left: 10%;
+		/*line-height stays the ssame, 10+10+80 = 100%*/
+	}
+	
+}
+
+/*===========================================
+LARGER PHONES/SMALL TABLETS FROM 481 - 767PX
+=============================================*/
+
+
+@media only screen and (max-width: 767px) {
+	/*IPHONE MOBILE MEDIA*/
+}
+
+/*===========================================
+SMALL PHONES FROM 0-480PX
+=============================================*/
+
+
+@media only screen and (max-width: 480px) {
+	/*IPHONE MOBILE MEDIA*/
+}
+
+
+
+
+
+
+
+
