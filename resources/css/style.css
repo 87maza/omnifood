@@ -20,13 +20,15 @@ General Styles
 
 *:focus {outline: none;} /*removes chrome's blue highlighting when you click on a text box*/
 
-html {
+html,
+body {
 	background: #fff;
 	color: #555;
 	font-family: 'Lato'; 'Arial'; sans-serif;
 	font-size: 20px;
 	font-weight: 300; /*default weight*/
 	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
 }
 .box {
 	/*added box class because columns are too close to each other*/
